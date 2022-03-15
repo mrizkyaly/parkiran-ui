@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #0072bb;
+    --secondary-color: #04b0f2;
+    --white: #fff;
+    --black: #000;
+    --gray: #5e5e5e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: inter;
+}
+
+body {
+    background: rgba(0, 114, 187, 0.12);
+}
+
+.checkin {
+    padding-left: 220px;
+    padding-right: 220px;
+}
+
+.validasi {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.logo {
+    margin-bottom: 18px;
+}
+
+.logo img {
+    width: 16%;
+}
+
+.card {
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 12px;
+}
+
+.card-title h5 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gray);
+}
+
+.cam .cam-checkin {
+    width: 57%;
+}
+
+.cam .cam-checkout {
+    width: 75%;
+}
+
+.form label {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--gray);
+}
+
+.courtesy {
+    font-size: 16px;
+}
+
+.courtesy span {
+    font-weight: 400;
+}
+
+.courtesy a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: all ease 0.5s;
+}
+
+.courtesy a:hover {
+    text-decoration: underline;
+}

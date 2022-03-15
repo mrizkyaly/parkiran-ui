@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link
+            rel="shortcut icon"
+            href="./assets/img/logo2.png"
+            type="image/x-icon"
+        />
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+            crossorigin="anonymous"
+        />
+
+        <link rel="stylesheet" href="./assets/css/style.css" />
+
+        <title>Parkiran ITATS - Checkin</title>
+    </head>
+    <body>
+        <section class="parkiran">
+            <div class="container validasi py-3">
+                <div class="row d-flex justify-content-center">
+                    <div class="logo">
+                        <img
+                            src="./assets/img/logo.png"
+                            class="img-fluid"
+                            alt=""
+                        />
+                    </div>
+
+                    <div class="cam">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title text-center">
+                                    <h5>Check In</h5>
+                                </div>
+                                <video
+                                    autoplay="true"
+                                    id="video-webcam"
+                                    class="d-block mx-auto rounded cam-checkin"
+                                >
+                                    Browsermu tidak mendukung bro, upgrade donk!
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="card">
+                            <div class="card-body">
+                                <label for="accesscode" class="form-label"
+                                    >Access Code</label
+                                >
+                                <input
+                                    type="text"
+                                    id="accesscode"
+                                    class="form-control"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="text-center text-capitalize courtesy">
+                        <span
+                            >Dibuat Oleh &copy;
+                            <a href="index.html"
+                                >Pusat Sistem Informasi ITATS</a
+                            >
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script type="text/javascript">
+            // seleksi elemen video
+            var video = document.querySelector('#video-webcam');
+
+            // minta izin user
+            navigator.getUserMedia =
+                navigator.getUserMedia ||
+                navigator.webkitGetUserMedia ||
+                navigator.mozGetUserMedia ||
+                navigator.msGetUserMedia ||
+                navigator.oGetUserMedia;
+
+            // jika user memberikan izin
+            if (navigator.getUserMedia) {
+                // jalankan fungsi handleVideo, dan videoError jika izin ditolak
+                navigator.getUserMedia(
+                    { video: true },
+                    handleVideo,
+                    videoError
+                );
+            }
+
+            // fungsi ini akan dieksekusi jika  izin telah diberikan
+            function handleVideo(stream) {
+                video.srcObject = stream;
+            }
+
+            // fungsi ini akan dieksekusi kalau user menolak izin
+            function videoError(e) {
+                // do something
+                alert('Izinkan menggunakan webcam untuk demo!');
+            }
+        </script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
